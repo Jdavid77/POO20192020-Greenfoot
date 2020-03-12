@@ -18,10 +18,7 @@ public class MisselNave1 extends Misseis
         removedomundo();
     }    
     public MisselNave1(){
-        GreenfootImage missel = getImage();
-        int alturanova = missel.getHeight()/8;
-        int larguranova = missel.getWidth()/6;
-        missel.scale(larguranova,alturanova);
+       
         
         
         

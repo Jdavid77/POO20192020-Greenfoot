@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class gas2 extends Gas
 {
     public int vida = 2;
+    boolean tocando = false;
     /**
      * Act - do whatever the gas2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,7 +17,8 @@ public class gas2 extends Gas
     public void act() 
     {
         movegas();
-        atingido2();
+        
+        atingido2();        
         
     }    
     public gas2(){
@@ -24,23 +26,35 @@ public class gas2 extends Gas
         int alturanova = gas2.getHeight()/5;
         int larguranova = gas2.getWidth()/6;
         gas2.scale(larguranova,alturanova);
+    }
+    public void removedomundo(){        
+         if (isAtEdge()){
+            getWorld().removeObject(this);       
         
-        
-        
-        
+        }     
     }
     public void atingido2(){
         Actor missile = getOneIntersectingObject(Misseis.class);
+        
+        Background world = (Background)getWorld();
+        HealthBar barra = world.getHealthBar();
         if (missile != null){
             getWorld().removeObject(missile);
             vida--;
         }
         else if (vida== 0){
-            getWorld().removeObject(this);
-            getWorldOfType(Background.class).adicionapontos(20);
+            world.removegas2(this);
+            
         }
         else if (getY() == 0)
-            getWorld().removeObject(this);
+            world.removeGas2(this);
+            
         }
     
 }
+    
+        
+    
+    
+    
+

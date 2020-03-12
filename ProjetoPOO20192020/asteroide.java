@@ -1,29 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Gas here.
+ * Write a description of class asteroide here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Gas extends Actor
+public class asteroide extends Actor
 {
     /**
-     * Act - do whatever the Gas wants to do. This method is called whenever
+     * Act - do whatever the asteroide wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    int contador;
     public void act() 
     {
-        
-    }    
-    public void movegas(){
-        setLocation(getX(),getY()-6);
-       
-        
-    }
-    public void removegas(){
-        if (getY()==0)
+     
+     setLocation(getX()-10,getY());
+     turn(4);
+     if (getX()==0)
             getWorld().removeObject(this);
-        
+     
+     
+          
     }
+   
+    
 }
