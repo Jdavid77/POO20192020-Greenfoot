@@ -20,10 +20,22 @@ public class asteroide extends Actor
      turn(4);
      if (getX()==0)
             getWorld().removeObject(this);
-     
+     rasto();
      
           
     }
-   
-    
+    public asteroide(){
+        GreenfootImage asteroide = getImage();
+        int alturanova = asteroide.getHeight()*2;
+        int larguranova = asteroide.getWidth()*2;
+        asteroide.scale(larguranova,alturanova);
+    }
+    public void rasto(){
+        contador++;
+        if (contador == 3){
+            getWorld().addObject(new rasto(),getX()+55, getY());
+            contador = 0;
+        
+    }
+}
 }

@@ -25,6 +25,7 @@ public class Background extends World
         factory fabrica2 = new factory();
         addObject(fabrica2,496,570);
         score = 0;
+        setPaintOrder(asteroide.class,rasto.class);
         
         addObject(vida,900,50);
     }
@@ -46,7 +47,7 @@ public class Background extends World
         
         x = 1000;
         y = Greenfoot.getRandomNumber(600);
-        addObject(new Fogo(), x, y);
+        
         addObject(new asteroide(), x-70, y+5);
     }
     public void removegas1(gas1 GAS1)

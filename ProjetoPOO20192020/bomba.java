@@ -15,15 +15,21 @@ public class bomba extends Gas
     public void act() 
     {
         movegas();
-        gameover();
-
+        explosaobomba();
+        acertou();
         
         
     }
-    public void gameover(){
-        if (acertou())
-            Greenfoot.stop();
+    public void explosaobomba(){
+        
+        if(isTouching(Misseis.class)){
+            getWorld().addObject(new Explosao(),getX(), getY()-10);
+            
+        
+     }
     }
+    
+    
     public boolean acertou()
     {
         Actor missile = getOneIntersectingObject(Misseis.class);
