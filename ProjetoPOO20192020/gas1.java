@@ -8,10 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class gas1 extends Gas
 {
-    /**
-     * Act - do whatever the gas1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private int pontos=0;
     public void act() 
     {
@@ -23,5 +19,12 @@ public class gas1 extends Gas
         int alturanova = gas.getHeight()/7;
         int larguranova = gas.getWidth()/9;
         gas.scale(larguranova,alturanova);
+    }
+    public void removegas(){
+        Background world = (Background)getWorld();
+        if (getY()==0){
+            getWorld().removeObject(this);
+            world.removeGas1(this);
+        } 
     }
 }

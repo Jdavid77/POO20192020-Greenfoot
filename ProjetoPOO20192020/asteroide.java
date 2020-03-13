@@ -20,9 +20,9 @@ public class asteroide extends Actor
      turn(4);
      if (getX()==0)
             getWorld().removeObject(this);
-     rasto();
-     
-          
+     else if(getX()>50){
+         rasto();
+        }
     }
     public asteroide(){
         GreenfootImage asteroide = getImage();
@@ -33,9 +33,11 @@ public class asteroide extends Actor
     public void rasto(){
         contador++;
         if (contador == 3){
-            getWorld().addObject(new rasto(),getX()+55, getY());
+            getWorld().addObject(new Fogo(),getX()+55, getY());
             contador = 0;
         
     }
-}
+   
+    
+    }   
 }

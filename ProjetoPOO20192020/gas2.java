@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class gas2 extends Gas
 {
-    public int vida = 2;
+    public int vidaGas = 2;
     boolean tocando = false;
     /**
      * Act - do whatever the gas2 wants to do. This method is called whenever
@@ -37,12 +37,12 @@ public class gas2 extends Gas
         Actor missile = getOneIntersectingObject(Misseis.class);
         
         Background world = (Background)getWorld();
-        HealthBar barra = world.getHealthBar();
+        
         if (missile != null){
             getWorld().removeObject(missile);
-            vida--;
+            vidaGas--;
         }
-        else if (vida== 0){
+        else if (vidaGas== 0){
             world.removegas2(this);
             
         }

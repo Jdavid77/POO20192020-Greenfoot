@@ -10,14 +10,10 @@ public class Explosao extends Actor
 {
     private GreenfootImage[] imagens;
     private int indice;
-    /**
-     * Act - do whatever the Explosao wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act() 
     {
         animaexplosao();
-    }    
+    }
     public void animaexplosao(){
         indice++;
         if (indice < imagens.length)

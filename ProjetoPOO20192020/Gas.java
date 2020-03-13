@@ -18,12 +18,6 @@ public class Gas extends Actor
     }    
     public void movegas(){
         setLocation(getX(),getY()-6);
-       
-        
     }
-    public void removegas(){
-        if (getY()==0)
-            getWorld().removeObject(this);
-        
-    }
+    
 }
