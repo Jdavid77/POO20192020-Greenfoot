@@ -18,6 +18,8 @@ public class Nave1 extends Nave
     {
         controlanave();
         naveAsteroide();
+       
+        
     }
     public void controlanave(){
         int y = getY();
@@ -27,6 +29,10 @@ public class Nave1 extends Nave
                 y= y - 5;
         else if (Greenfoot.isKeyDown("S") &&y <=250)
                 y= y + 5;            
+        else if (Greenfoot.isKeyDown("D") && x <= 150)
+                x = x + 5;
+        else if (Greenfoot.isKeyDown("A"))
+                x = x - 5;
         setLocation(x,y);
         if (Greenfoot.isKeyDown("space") && disparo == true){
             getWorld().addObject(new MisselNave1(), getX()+62, getY()+2);
@@ -36,4 +42,8 @@ public class Nave1 extends Nave
             disparo = true;
         
     }
+   
+        
+        
 }
+

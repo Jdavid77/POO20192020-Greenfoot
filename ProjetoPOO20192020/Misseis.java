@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Misseis extends Actor
 {
-    private int speed = 15;    
+    private int speed = 20;    
     public void act() 
     {
         

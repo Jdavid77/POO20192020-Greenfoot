@@ -6,7 +6,7 @@ public class Background extends World
     private int x,y;
     HealthBar vida = new HealthBar();
     int VIDA;
-    private int tempo=3600;
+    private int tempo=7200;
     public Background()
     {        
         super(1000, 600, 1); 
@@ -15,12 +15,16 @@ public class Background extends World
         Nave2 rocket = new Nave2();
         addObject(rocket, 128 ,438);
         factory fabrica1 = new factory();
-        addObject(fabrica1,769,570);
+        addObject(fabrica1,800,570);
         factory fabrica2 = new factory();
-        addObject(fabrica2,496,570);
+        addObject(fabrica2,600,570);
+        factory fabrica3 = new factory();
+        addObject(fabrica3,400,570);
         score = 0;        
         addObject(vida,900,50);
         setPaintOrder(asteroide.class,Fogo.class);
+        setPaintOrder(Explosao2.class,asteroide.class);
+        showText("PROTECT THE OZONE LAYER AT ALL COST!!!" ,500,50);
     }    
     public HealthBar getHealthBar(){
         return vida;
@@ -65,7 +69,7 @@ public class Background extends World
     public void act(){
         tempo--;
         int segundos = tempo/60;
-        showText("Score: " + score,50,50);
+        showText("Score: " + score,50,20);
         if(Greenfoot.getRandomNumber(100)<2)
             addgas1();
         else if(Greenfoot.getRandomNumber(150)<1)
@@ -75,6 +79,7 @@ public class Background extends World
         else if(Greenfoot.getRandomNumber(400)<1)
             addasteroide();
         showText("Tempo Restante: " + segundos,900,10);
+        
         objetivo();
     }
     public void objetivo(){

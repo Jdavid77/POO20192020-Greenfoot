@@ -1,33 +1,28 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Fogo here.
+ * Write a description of class dez here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Fogo extends Actor
+public class dez extends Actor
 {
     private GreenfootImage imagem;
     /**
-     * Act - do whatever the Fogo wants to do. This method is called whenever
+     * Act - do whatever the dez wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         fading();
+        movimento();
     }    
-    public Fogo(){
+    public dez(){
         GreenfootImage gas = getImage();
-        int alturanova = gas.getHeight()/9;
-        int larguranova = gas.getWidth()/5;
+        int alturanova = gas.getHeight()/35;
+        int larguranova = gas.getWidth()/40;
         gas.scale(larguranova,alturanova);
-        setRotation(180);
-        
-        
-        
-        
-        
     }
     public void fading(){
         imagem = getImage();
@@ -40,4 +35,9 @@ public class Fogo extends Actor
         
         
         }
+    public void movimento(){
+        
+        setLocation(getX(), getY() +10);
+     
+    }
 }

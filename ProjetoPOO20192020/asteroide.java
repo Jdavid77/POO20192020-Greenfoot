@@ -26,18 +26,19 @@ public class asteroide extends Actor
     }
     public asteroide(){
         GreenfootImage asteroide = getImage();
-        int alturanova = asteroide.getHeight()*2;
-        int larguranova = asteroide.getWidth()*2;
+        int alturanova = asteroide.getHeight();
+        int larguranova = asteroide.getWidth();
         asteroide.scale(larguranova,alturanova);
     }
     public void rasto(){
         contador++;
         if (contador == 3){
-            getWorld().addObject(new Fogo(),getX()+55, getY());
+            getWorld().addObject(new Fogo(),getX()+70, getY());
             contador = 0;
         
     }
    
     
     }   
+    
 }

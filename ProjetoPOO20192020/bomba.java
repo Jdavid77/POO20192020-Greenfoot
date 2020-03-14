@@ -15,12 +15,12 @@ public class bomba extends Gas
     public void act() 
     {
         movegas();
-        gameover();
+        perdepontos();
     }
-    public void gameover(){
+    public void perdepontos(){
         Background world = (Background)getWorld();
         if (acertou())            
-            world.score =- 50;
+            world.score = world.score - 10;
     }
     public boolean acertou()
     {
@@ -29,6 +29,7 @@ public class bomba extends Gas
 
         if (missile != null){
             world.addObject(new Explosao(),getX(), getY()-10);
+            world.addObject(new dez(),90,26);
             world.removeObject(this);
             return true;
             

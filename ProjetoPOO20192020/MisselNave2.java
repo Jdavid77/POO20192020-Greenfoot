@@ -17,10 +17,6 @@ public class MisselNave2 extends Misseis
         movemissel();
         removedomundo();
     }    
-    public MisselNave2(){
-        
-        
-        
-    }
+   
     
 }
