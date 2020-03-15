@@ -10,6 +10,7 @@ public class gas2 extends Gas
 {
     public int vidaGas = 2;
     boolean tocando = false;
+    
     /**
      * Act - do whatever the gas2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -35,7 +36,7 @@ public class gas2 extends Gas
     }
     public void atingido2(){
         Actor missile = getOneIntersectingObject(Misseis.class);
-        
+
         Background world = (Background)getWorld();
         
         if (missile != null){
@@ -44,6 +45,7 @@ public class gas2 extends Gas
         }
         else if (vidaGas== 0){
             world.removegas2(this);
+            
             
         }
         else if (getY() == 0)

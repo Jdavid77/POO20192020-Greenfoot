@@ -10,6 +10,7 @@ public class Personagem extends Actor
 {
     int vSpeed =0;
     int accel = 0;
+    boolean pressed = false;
     /**
      * Act - do whatever the Personagem wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -36,8 +37,9 @@ public class Personagem extends Actor
             vSpeed =0;
     }
     public void jump(){
-        if(Greenfoot.isKeyDown("space") )
+        if(Greenfoot.isKeyDown("space") && !pressed )
                 vSpeed= vSpeed - 15;
+                pressed = true;
         
     }
 }

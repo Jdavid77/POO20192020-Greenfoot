@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class gas1 extends Gas
 {
-    private int pontos=0;
+    
     public void act() 
     {
         movegas();

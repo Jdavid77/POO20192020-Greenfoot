@@ -15,8 +15,9 @@ public class dez extends Actor
      */
     public void act() 
     {
-        fading();
         movimento();
+        fading();
+        
     }    
     public dez(){
         GreenfootImage gas = getImage();

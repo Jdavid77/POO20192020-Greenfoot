@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Misseis extends Actor
 {
-    private int speed = 20;    
+    private int speed = 20;
+    
     public void act() 
     {
         
@@ -24,9 +25,11 @@ public class Misseis extends Actor
     public boolean colisao1(){
         gas1 acertado1 = (gas1)getOneIntersectingObject(gas1.class);        
         Background world = (Background)getWorld();
+        
         if (acertado1 != null)
         {
          world.removegas1(acertado1);
+         
          return true;
         }
         return false;

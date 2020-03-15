@@ -19,8 +19,11 @@ public class bomba extends Gas
     }
     public void perdepontos(){
         Background world = (Background)getWorld();
+        
         if (acertou())            
             world.score = world.score - 10;
+            
+            
     }
     public boolean acertou()
     {
@@ -31,7 +34,9 @@ public class bomba extends Gas
             world.addObject(new Explosao(),getX(), getY()-10);
             world.addObject(new dez(),90,26);
             world.removeObject(this);
+            world.bombaa();
             return true;
+            
             
         }
         if (getY()==0)
