@@ -10,6 +10,8 @@ public class Boneco1 extends Boneco
 {
     private GreenfootImage [] imagens;
     private int indice;
+    private int jornais=0;
+
     /**
      * Act - do whatever the Boneco1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,6 +20,11 @@ public class Boneco1 extends Boneco
     {
         anima();
         movimento();
+        apanhaJornal();
+        depositaJornal();
+        if(getY()<300){
+            setLocation(getX(),300);
+        }
     }    
     public Boneco1(){
          
@@ -44,7 +51,7 @@ public class Boneco1 extends Boneco
         
         setImage(imagens[indice]);
     }
-    }
+}
     public void movimento(){
         
         if(Greenfoot.isKeyDown("right")){
@@ -66,5 +73,23 @@ public class Boneco1 extends Boneco
         
             setLocation(getX(), getY() + 4);
     }
+}
+public void apanhaJornal(){
+    Actor jornal1 = getOneIntersectingObject(Jornal.class);
+    Background2 world = (Background2)getWorld();
+    if(jornal1!=null && jornais <5){
+        jornais++;
+        getWorld().removeObject(jornal1);
+        
+    }
+}
+public void depositaJornal(){
+    Background2 world = (Background2)getWorld();
+    
+    
+    if(isTouching(Azul.class)){
+        world.depositaJornal(jornais);
+        jornais =0;
+}
 }
 }

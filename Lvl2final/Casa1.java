@@ -1,20 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Nuvem1 here.
+ * Write a description of class Casa1 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Nuvem1 extends Nuvem
+public class Casa1 extends Casa
 {
     /**
-     * Act - do whatever the Nuvem1 wants to do. This method is called whenever
+     * Act - do whatever the Casa1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        movimento();
+        geraLixo();
     }    
-    
 }

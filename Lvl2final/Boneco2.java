@@ -10,6 +10,7 @@ public class Boneco2 extends Boneco
 {
     private GreenfootImage [] imagens;
     private int indice;
+    private int plasticos;
     /**
      * Act - do whatever the Boneco1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,6 +19,11 @@ public class Boneco2 extends Boneco
     {
         anima();
         movimento();
+        apanhaPlastico();
+        depositaPlastico();
+        if(getY()<300){
+            setLocation(getX(),300);
+        }
     }    
     public Boneco2(){
          
@@ -68,4 +74,23 @@ public class Boneco2 extends Boneco
 
         }
     }
+        public void apanhaPlastico(){
+    Actor plastico = getOneIntersectingObject(Plástico.class);
+    Background2 world = (Background2)getWorld();
+    if(plastico!=null && plasticos <5){
+        plasticos++;
+        getWorld().removeObject(plastico);
+        
+    }
 }
+    public void depositaPlastico(){
+    Background2 world = (Background2)getWorld();
+    
+    
+    if(isTouching(Amarelo.class)){
+        world.depositaPlastico(plasticos);
+        plasticos =0;
+    }
+}
+}
+

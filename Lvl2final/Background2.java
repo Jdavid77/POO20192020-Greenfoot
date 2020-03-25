@@ -13,18 +13,24 @@ public class Background2 extends World
      * Constructor for objects of class Background2.
      * 
      */
+    private int LixoP;
+    private int LixoJ;
     public Background2()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 600, 1); 
        
         prepare();
-        setPaintOrder(Boneco.class,Ecoponto.class);
+        setPaintOrder(Ecoponto.class,Boneco.class);
+        
         
     }
 
     public void act(){
         adicionanuvem();
+        showText(""+LixoP,550,550);
+        showText(""+LixoJ,450,550);
+        
 
     }
     public void adicionanuvem(){
@@ -80,10 +86,22 @@ public class Background2 extends World
         addObject(boneco2,78,494);
         
         Azul azul = new Azul();
-        addObject(azul,176,426);
+        addObject(azul,450,550);
         
         Amarelo amarelo = new Amarelo();
-        addObject(amarelo,90,426);
+        addObject(amarelo,550,550);
+        
+        Casa1 Casa1 = new Casa1();
+        addObject(Casa1,125,256);
+        
+        Casa1 Casa11 = new Casa1();
+        addObject(Casa11,875,256);
+        
+        Casa2 Casa2 = new Casa2();
+        addObject(Casa2,375,256);
+        
+        Casa2 Casa22 = new Casa2();
+        addObject(Casa22,625,256);
         
 
         boneco2.setLocation(54,513);
@@ -93,4 +111,20 @@ public class Background2 extends World
         boneco1.setLocation(55,471);
         
     }
+    public void addJornal(int X, int Y){
+        Jornal Jornal = new Jornal();
+        addObject(Jornal,X,Y+Greenfoot.getRandomNumber(200));
+        
+    }
+    public void addPlastico(int X, int Y){
+        Plástico Plástico = new Plástico();
+        addObject(Plástico,X,Y+Greenfoot.getRandomNumber(200));
+    }
+    public void depositaJornal(int X){
+        LixoJ = LixoJ+ X;
+    }
+    public void depositaPlastico(int X){
+        LixoP = LixoP+ X;
+    }
+    
 }

@@ -17,16 +17,7 @@ public class Nuvem2 extends Nuvem
     {
         movimento(4);
     }    
-    public Nuvem2(){
-        GreenfootImage nuvem = getImage();
-        int alturanova = nuvem.getHeight()/3;
-        int larguranova = nuvem.getWidth()/6;
-        nuvem.scale(larguranova,alturanova);
-        
-        
-        
-        
-    }
+    
     public void movimento(int speed){
         setLocation(getX()-speed,getY());
         
