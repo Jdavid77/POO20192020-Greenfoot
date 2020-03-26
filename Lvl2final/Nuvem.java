@@ -28,4 +28,11 @@ public class Nuvem extends Actor
         
         
     }
+    public void movimento(int speed){
+        setLocation(getX()-speed,getY());
+        
+        if(getX() == 0){
+            getWorld().removeObject(this);
+        }
+    }
 }

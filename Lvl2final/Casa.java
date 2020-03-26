@@ -8,13 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Casa extends Actor
 {
+    
     /**
      * Act - do whatever the Casa wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
+        
+        
     }
     public void geraLixo(){
         Background2 world = (Background2)getWorld();
@@ -24,4 +26,6 @@ public class Casa extends Actor
            world.addJornal(getX(),getY()+100);
     }
     
-}
+    
+    }
+

@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Nuvem2 extends Nuvem
 {
-    private int speed;
+    
     /**
      * Act - do whatever the Nuvem2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,12 +18,6 @@ public class Nuvem2 extends Nuvem
         movimento(4);
     }    
     
-    public void movimento(int speed){
-        setLocation(getX()-speed,getY());
-        
-        if(getX() == 0){
-            getWorld().removeObject(this);
-        }
-    }
+   
     
 }

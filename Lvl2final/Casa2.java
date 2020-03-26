@@ -15,5 +15,15 @@ public class Casa2 extends Casa
     public void act() 
     {
         geraLixo();
+        move(-1);
+        addCasa2();
     }    
+    public void addCasa2(){
+            Casa2 casa2 = new Casa2();
+            if(getX() == 0){
+                getWorld().addObject(casa2,1000,getY());
+                getWorld().removeObject(this);
+            }
+            
+        }
 }

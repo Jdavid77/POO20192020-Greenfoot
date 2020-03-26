@@ -25,6 +25,9 @@ public class Boneco1 extends Boneco
         if(getY()<300){
             setLocation(getX(),300);
         }
+        apanhaesfregona();
+        limpaóleo();
+        baldeesfregona();
     }    
     public Boneco1(){
          
@@ -55,23 +58,23 @@ public class Boneco1 extends Boneco
     public void movimento(){
         
         if(Greenfoot.isKeyDown("right")){
-            move(4);
+            move(6);
         
         
         }
         else if(Greenfoot.isKeyDown("left")){
             
-            move(-4);
+            move(-6);
             
         }
         else if(Greenfoot.isKeyDown("up")){
             
-            setLocation(getX(),getY() - 4);
+            setLocation(getX(),getY() - 6);
             
         }   
         else if(Greenfoot.isKeyDown("down")){
         
-            setLocation(getX(), getY() + 4);
+            setLocation(getX(), getY() + 6);
     }
 }
 public void apanhaJornal(){
@@ -87,7 +90,7 @@ public void depositaJornal(){
     Background2 world = (Background2)getWorld();
     
     
-    if(isTouching(Azul.class)){
+    if(isTouching(Azul.class) && jornais == 5){
         world.depositaJornal(jornais);
         jornais =0;
 }

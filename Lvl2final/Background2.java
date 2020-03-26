@@ -18,16 +18,17 @@ public class Background2 extends World
     public Background2()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 600, 1); 
+        super(1000, 600, 1,false); 
        
         prepare();
         setPaintOrder(Ecoponto.class,Boneco.class);
-        
+        showText("CLEAN THE ENVIRONMENT, BEFORE THE TIMER RUNS OUT",500,30);
         
     }
 
     public void act(){
         adicionanuvem();
+        addAvião();
         showText(""+LixoP,550,550);
         showText(""+LixoJ,450,550);
         
@@ -110,6 +111,11 @@ public class Background2 extends World
         boneco2.setLocation(61,520);
         boneco1.setLocation(55,471);
         
+        Esfregona esfregona1 = new Esfregona();
+        addObject(esfregona1,374,546);
+        
+        Balde balde1 = new Balde();
+        addObject(balde1,636,551);
     }
     public void addJornal(int X, int Y){
         Jornal Jornal = new Jornal();
@@ -120,6 +126,14 @@ public class Background2 extends World
         Plástico Plástico = new Plástico();
         addObject(Plástico,X,Y+Greenfoot.getRandomNumber(200));
     }
+    public void addAvião(){
+        Avião aviao1 = new Avião();
+        if(Greenfoot.getRandomNumber(800) < 1){
+            addObject(aviao1,0,100);
+        
+        }
+    }
+
     public void depositaJornal(int X){
         LixoJ = LixoJ+ X;
     }

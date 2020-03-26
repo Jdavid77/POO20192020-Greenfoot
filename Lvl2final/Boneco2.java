@@ -24,6 +24,9 @@ public class Boneco2 extends Boneco
         if(getY()<300){
             setLocation(getX(),300);
         }
+        apanhaesfregona();
+        limpaóleo();
+        baldeesfregona();
     }    
     public Boneco2(){
          
@@ -54,23 +57,23 @@ public class Boneco2 extends Boneco
     public void movimento(){
         
         if(Greenfoot.isKeyDown("D")){
-            move(4);
+            move(6);
         
         
         }
         else if(Greenfoot.isKeyDown("A")){
             
-            move(-4);
+            move(-6);
             
         }
         else if(Greenfoot.isKeyDown("W")){
             
-            setLocation(getX(),getY() - 4);
+            setLocation(getX(),getY() - 6);
             
         }   
         else if(Greenfoot.isKeyDown("S")){
         
-            setLocation(getX(), getY() + 4);
+            setLocation(getX(), getY() + 6);
 
         }
     }
@@ -87,7 +90,7 @@ public class Boneco2 extends Boneco
     Background2 world = (Background2)getWorld();
     
     
-    if(isTouching(Amarelo.class)){
+    if(isTouching(Amarelo.class) && plasticos == 5){
         world.depositaPlastico(plasticos);
         plasticos =0;
     }
